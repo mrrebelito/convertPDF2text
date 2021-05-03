@@ -40,8 +40,8 @@ with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
 
 
 # searches file output
-with open(filename, 'r', encoding='utf-8') as csvfile:
+with open(filename, 'r', encoding='utf-8') as f:
     csvreader = csv.reader(f)
     for row in csvreader:
-        if search_term in row[3]:
+        if search_term in row[3] and row[3] is not None:
             print(row)
